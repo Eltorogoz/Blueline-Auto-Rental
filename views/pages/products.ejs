@@ -1,0 +1,85 @@
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/menu.ejs') %>
+
+<div class="container my-5">
+  <h2 class="text-center text-primary mb-4">Our Vehicles</h2>
+
+  <div class="row">
+    <% data.forEach((car) => { %>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          
+          <img src="<%= car.image %>" class="card-img-top" alt="<%= car.name %>">
+          
+          <div class="card-body">
+            <h5 class="card-title text-primary"><%= car.name %></h5>
+            
+            <p class="card-text"><%= car.description %></p>
+
+            <button 
+              id="<%= car.id %>" 
+              class="btn btn-outline-primary w-100 mt-3 details-btn" 
+              data-bs-toggle="modal"
+              data-bs-target="#carModal" 
+              data-name="<%= car.name %>" 
+              data-price="<%= car.price %>"
+              data-availability="<%= car.availability %>" 
+              data-category="<%= car.category %>">
+              Show Details
+            </button>
+
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+<!-- Car Details -->
+<div class="modal fade" id="carModal" tabindex="-1" aria-labelledby="carModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="carModalLabel">Vehicle Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <p><strong>Category:</strong> <span id="modal-category"></span></p>
+        <p><strong>Price per day:</strong> $<span id="modal-price"></span></p>
+        <p><strong>Availability:</strong> <span id="modal-availability"></span></p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  let dataset = '<%- JSON.stringify(data) %>';
+  let cars = JSON.parse(dataset);
+
+  let allDetailButtons = document.querySelectorAll('.details-btn');
+
+  allDetailButtons.forEach((detailsButton) => {
+    detailsButton.addEventListener('click', function (event) {
+
+      const button = event.target;
+      const carId = button.id;
+      const car = cars.find(c => c.id == carId);
+
+      if (car) {
+        document.querySelector('#carModalLabel').textContent = car.name;
+        document.querySelector('#modal-category').textContent = car.category;
+        document.querySelector('#modal-price').textContent = car.price;
+        document.querySelector('#modal-availability').textContent = car.availability;
+      }
+    });
+  });
+</script>
+
+
+<%- include('../partials/footer.ejs') %>
