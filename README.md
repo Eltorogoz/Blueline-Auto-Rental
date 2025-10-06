@@ -4,7 +4,7 @@
 Blue Line Car Rental is a web application prototype created for a small car rental business using a relational database with a modern and responsive UI built with EJS and Bootstrap. Some of the separation concerns was the handling of each different layer and structure within the app. By approaching the project with a goal of making the system digestible and maintainable, we went for a structured architecture. 
 Database was to handle all data operations, creating product tables, storing car details, and any queries from site visitors via SQL database. Presenting this data was to be dealt with EJS template files and each page would use partials for consistent design throughout the website. Bootstrap is also in use for responsive UI design that users can efficiently find and interact with. Lastly, routing within the app.js file defines and processes user requests such as what page or pulled data should be displayed. 
 
-Routes
+# Routes
 The routes to each page can be found in the app.js file ensuring users are able to navigate to a desired page. This route links an EJS file that remains consistent as users seamlessly transition throughout the site.
 
 Step-by-Step Building Process
