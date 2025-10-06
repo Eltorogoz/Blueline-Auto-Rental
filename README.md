@@ -22,12 +22,11 @@ Inside app.js, routes established are:
 -	Contact Form page= “/contact”
 
 
-
 3. UI Implementation: For a responsive user interface Bootstrap was used in this prototype. Simply link the bootstrap CDN within the “head.ejs” file along with some scripting and minor CSS stylesheet. Without these links, vehicle would not be displayed without the card format nor would there be a feedback form within the Contact page.
 Inside head.ejs:
--	<link 'href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+-	"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css
 -	<script 'src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
--	<link 'rel="stylesheet" href="/css/styles.css" />
+-	/css/styles.css
 
 
 4. Data: In order to populate pages with data from the SQL database, it’s best to ensure that data is pulled in it’s correct form. This is best seen in the Product page as data on vehicles is requested from:
@@ -47,7 +46,7 @@ Ending finally in the EJS loop for each vehicle data:
 
 
 6. Receiving and Displaying Data: The goal of this application is to display the product data for users to browse and choose. As such retrieving data from the database to then render it from EJS templates is a needed step. Firstly to show modal car details, Express will call getDbConnection() so that SQL will retrieve its product row data and send it to the EJS file. From there EJS will loop each of the data pulled into rendered cards that can be viewed once visitors click the “Show Details” button:
-Inside products.ejs:
+Inside products.ejs ->
         "<button 
               "id="<%= car.id %>" 
               class="btn btn-outline-primary w-100 mt-3 details-btn" 
