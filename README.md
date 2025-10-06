@@ -37,15 +37,15 @@ Ending finally in the EJS loop for each vehicle data:
 <% data.forEach((car) => { %> … <% }) %>
 
 5. Promises: Coordinating with the database is extremely important as when the application starts, the database should be connected and set up necessary tables if needed, and fetch car data should users visit the Products page. Essentially it’s a to-do list that checks down boxes as it moves down the list, within the database.js file, this is best seen when open() begins to connect to the database file and will return when connection is safely completed:
-export const setupDatabase = () => {
+"export const setupDatabase = () => {
   return open({
     filename: './public/database/products.db',
     driver: sqlite3.Database 
-})
+})"
 
 6. Receiving and Displaying Data: The goal of this application is to display the product data for users to browse and choose. As such retrieving data from the database to then render it from EJS templates is a needed step. Firstly to show modal car details, Express will call getDbConnection() so that SQL will retrieve its product row data and send it to the EJS file. From there EJS will loop each of the data pulled into rendered cards that can be viewed once visitors click the “Show Details” button:
 Inside products.ejs:
-        <button 
+        "<button 
               id="<%= car.id %>" 
               class="btn btn-outline-primary w-100 mt-3 details-btn" 
               data-bs-toggle="modal"
@@ -55,7 +55,7 @@ Inside products.ejs:
               data-availability="<%= car.availability %>" 
               data-category="<%= car.category %>">
               Show Details
-       </button>
+       </button>"
 Running the Prototype
 If you’d like to view the application, ensure these steps have been completed and open it in a preferred browser.
 1.	Install Dependencies
