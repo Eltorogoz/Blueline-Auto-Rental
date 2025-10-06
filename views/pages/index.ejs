@@ -1,0 +1,33 @@
+<!--KRIS' WORK-->
+
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/menu.ejs') %>
+
+<main class="container py-5">
+  <section class="card border-0 shadow-sm mb-4 overflow-hidden">
+    <div class="row g-0 align-items-center">
+      <div class="col-12 col-lg-7 p-4 p-lg-5">
+        <h1 class="display-6 fw-bold mb-3 text-primary">Welcome</h1>
+        <p class="lead text-secondary mb-4">
+          Student-built prototype using SQLite + EJS + Bootstrap.
+        </p>
+        <a href="/products" class="btn btn-primary btn-lg">Browse Cars</a>
+      </div>
+      <div class="col-12 col-lg-5 d-none d-lg-block">
+        <img src="/images/carBanner.jpg" class="img-fluid rounded-end hero-banner" alt="Blue Line Vehicles">
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="h5 mb-3 text-primary">Why Blue Line?</h2>
+    <ul class="list-unstyled mb-0">
+      <li class="mb-2">• Clean, card-based inventory with real availability.</li>
+      <li class="mb-2">• Simple, fast prototype architecture.</li>
+      <li>• Fully local SQLite (relational) database.</li>
+    </ul>
+  </section>
+</main>
+
+<%- include('../partials/footer.ejs') %>
