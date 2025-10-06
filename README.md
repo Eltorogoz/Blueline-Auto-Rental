@@ -21,13 +21,11 @@ Inside app.js, routes established are:
 -	Products - Vehicles = “/products”
 -	Contact Form page= “/contact”
 
-
 3. UI Implementation: For a responsive user interface Bootstrap was used in this prototype. Simply link the bootstrap CDN within the “head.ejs” file along with some scripting and minor CSS stylesheet. Without these links, vehicle would not be displayed without the card format nor would there be a feedback form within the Contact page.
 Inside head.ejs:
 -	"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css
 -	"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js
 -	/css/styles.css
-
 
 4. Data: In order to populate pages with data from the SQL database, it’s best to ensure that data is pulled in it’s correct form. This is best seen in the Product page as data on vehicles is requested from:
  	“getDBConnection().then(db => db.all(‘SELECT * FROM products’)) )” 
@@ -36,14 +34,12 @@ which is then sent to the Products page route (app.js) into the EJS as:
 Ending finally in the EJS loop for each vehicle data: 
 <% data.forEach((car) => { %> … <% }) %>
 
-
 5. Promises: Coordinating with the database is extremely important as when the application starts, the database should be connected and set up necessary tables if needed, and fetch car data should users visit the Products page. Essentially it’s a to-do list that checks down boxes as it moves down the list, within the database.js file, this is best seen when open() begins to connect to the database file and will return when connection is safely completed:
 "export const setupDatabase = () => {
   return open({
     filename: './public/database/products.db',
     driver: sqlite3.Database 
 })"
-
 
 6. Receiving and Displaying Data: The goal of this application is to display the product data for users to browse and choose. As such retrieving data from the database to then render it from EJS templates is a needed step. Firstly to show modal car details, Express will call getDbConnection() so that SQL will retrieve its product row data and send it to the EJS file. From there EJS will loop each of the data pulled into rendered cards that can be viewed once visitors click the “Show Details” button:
 Inside products.ejs ->
@@ -59,7 +55,7 @@ Inside products.ejs ->
               Show Details
        </button>"
    
-Running the Prototype
+# Running the Prototype
 If you’d like to view the application, ensure these steps have been completed and open it in a preferred browser.
 1.	Install Dependencies
 2.	Run the app, type into terminal: 
