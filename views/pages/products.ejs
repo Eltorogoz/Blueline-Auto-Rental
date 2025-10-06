@@ -1,9 +1,13 @@
+<!--DEZ'S WORK-->
+
 <%- include('../partials/head.ejs') %>
 <%- include('../partials/menu.ejs') %>
+
 
 <div class="container my-5">
   <h2 class="text-center text-primary mb-4">Our Vehicles</h2>
 
+  <!--Vehicle Cards-->
   <div class="row">
     <% data.forEach((car) => { %>
       <div class="col-md-4 mb-4">
@@ -35,7 +39,7 @@
   </div>
 </div>
 
-<!-- Car Details -->
+<!-- Car Modal Details -->
 <div class="modal fade" id="carModal" tabindex="-1" aria-labelledby="carModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -80,6 +84,5 @@
     });
   });
 </script>
-
 
 <%- include('../partials/footer.ejs') %>
