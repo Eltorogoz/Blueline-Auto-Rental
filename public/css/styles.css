@@ -5,10 +5,10 @@
     object-fit: cover;
 }
 
-footer a:hover {
-    text-decoration: underline;
-    color: #dfefff;
+.hero-banner {
+    height: 100%;
+    width: 100%;
+    min-height: 390px;
+    object-fit: cover;
 }
-
-
 
