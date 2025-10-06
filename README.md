@@ -25,7 +25,7 @@ Inside app.js, routes established are:
 3. UI Implementation: For a responsive user interface Bootstrap was used in this prototype. Simply link the bootstrap CDN within the “head.ejs” file along with some scripting and minor CSS stylesheet. Without these links, vehicle would not be displayed without the card format nor would there be a feedback form within the Contact page.
 Inside head.ejs:
 -	"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css
--	<script 'src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+-	"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js
 -	/css/styles.css
 
 
