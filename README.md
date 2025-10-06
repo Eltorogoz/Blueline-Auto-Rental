@@ -7,7 +7,7 @@ Database was to handle all data operations, creating product tables, storing car
 # Routes
 The routes to each page can be found in the app.js file ensuring users are able to navigate to a desired page. This route links an EJS file that remains consistent as users seamlessly transition throughout the site.
 
-Step-by-Step Building Process
+# Step-by-Step Building Process
 1. Installation: Firstly, for the site to function properly, please install these dependencies:
 -	npm init -y
 -	npm i express ejs
